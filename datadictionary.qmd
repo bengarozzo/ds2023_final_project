@@ -1,5 +1,30 @@
 ---
-title: "Untitled"
+title: "Basketball Player Load Data Dictionary"
 format: html
 ---
 
+## Variable Definitions
+
+This data dictionary reflects variables retained after filtering and cleaning two Catapult datasets from Seasons 1 and 2, excluding player-specific entries and separating game vs. practice data.
+
+| Variable Name               | Operational Definition                                                                 |
+|----------------------------|-----------------------------------------------------------------------------------------|
+| `Date`                     | The calendar date of the session. Converted to a datetime format and sorted per player. |
+| `Season`                   | Indicates which dataset the session came from (either "Season 1" or "Season 2").        |
+| `About`                    | The athlete’s assigned name. Used to track individual session data; one player removed. |
+| `Position`                 | The athlete’s listed basketball position (e.g., Guard, Forward, Center).                |
+| `Period Number`            | Numerical label representing a segment of time during a session (e.g., quarter number). |
+| `Period`                   | Text description of a session segment (e.g., "Period 1").                 |
+| `Total Player Load`        | Overall workload calculated from accelerometer data; reflects cumulative movement.      |
+| `Player Load Per Minute`   | Average physical load per minute played. Normalizes `Total Player Load` by time.       |
+| `IMA Accel High`           | Count of high-intensity accelerations, such as fast breaks or hard cuts.               |
+| `IMA Jump Count High Band` | Count of jumps in the highest effort band (e.g., blocks, dunks, rebounds).             |
+| `Session Total Jumps`      | Total number of jumps captured by the sensor during a session.                         |
+
+## Notes
+
+- The dataset was cleaned by removing duplicates, excluding one player ("Ben Vander Plas"), and filtering by `Position` and `Period`.
+- Game data was identified by rows where the `Period` string included the word "period" (e.g., "Period 1", "Period 2").
+- Practice data was identified by exclusion of those `Period` labels.
+
+Sensor data was sourced from Catapult and reflects a mixture of accelerometer and jump-based metrics, typically used to monitor basketball workload and readiness.
