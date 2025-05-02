@@ -1,5 +1,25 @@
 ---
-title: "Untitled"
+title: "Data Dictionary for Player Load Presentation"
 format: html
 ---
 
+## Variable Definitions
+
+| Variable Name              | Operational Definition                                                                 |
+|---------------------------|-----------------------------------------------------------------------------------------|
+| `Date`                    | The calendar date when the session occurred.                                            |
+| `Season`                  | The specific season or timeframe (e.g., Fall 2023) during which the session took place. |
+| `About`                   | A brief descriptor or context for the session (e.g., practice, game).                   |
+| `Position`                | The player's on-field or role-specific designation (e.g., Midfielder, Defender).        |
+| `Period Number`           | A numerical value indicating the session segment (e.g., 1st half = 1, 2nd half = 2).    |
+| `Period`                  | Label describing the time segment (e.g., "First Half").                                 |
+| `Total Player Load`       | Total external workload derived from all directional accelerations over time.           |
+| `Player Load Per Minute`  | Average player load per minute; calculated by dividing total player load by session time.|
+| `IMA Accel High`          | Count of high-intensity acceleration events recorded during the session.                |
+| `IMA Jump Count High Band`| Number of jumps recorded in the highest performance band based on vertical force data.  |
+| `Session Total Jumps`     | Total number of jumps meeting defined criteria (e.g., flight time > 320ms, peak force). |
+
+## Notes
+
+- "Player Load" values are derived from Catapult sensor data using tri-axial accelerometers.
+- "IMA" refers to Inertial Movement Analysis, a technique that captures micro-movements and rapid directional changes.
